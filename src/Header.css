@@ -1,0 +1,42 @@
+
+
+.header {
+  width: 100%; 
+  margin: 30px;
+  display: flex;
+  background-color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header > div {
+  margin: 10px;
+  padding: 20px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+
+}
+a:link {
+  text-decoration: none;
+  color:rgb(29, 29, 75);
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+a:active {
+  color: blue;
+}
+
+img {
+  height:40px;
+  width: 60px;
+
+}
