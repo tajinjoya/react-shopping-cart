@@ -1,12 +1,20 @@
 import React, {useState, createContext, useEffect} from 'react';
 import axios from 'axios';
+
+//import useLocalStorage from './Hooks/useLocalStorage';
 export const ShoppingContext = createContext({});
+
+let localCart = window.localStorage.getItem('cartItems');
 
 export const ShoppingProvider = (props) => {
   const [data, setData] = useState([]);
   const [cartItems, setCartItems] = useState([]);
 
- 
+ useEffect(()=>{
+  localCart = JSON.parse(localCart);
+  if (localCart) setCartItems(localCart)
+   //window.localStorage.setItem('cartItems5', JSON.stringify(cartItems));
+ }, []);
 
  const getPosts = async () => {
   try {
@@ -30,39 +38,54 @@ export const ShoppingProvider = (props) => {
     //  return()=>clearInterval(interval)
 },[]) 
 
+const getProduct = (id) => {
+  console.log(id)
+console.log(data)
+let whatever = data[id]
+console.log(whatever)
+return whatever;
+
+}
+
 const onAdd = (id) => {
 console.log(id)
-//  console.log(data)
- //let whatever = data.filter(ele => ele.id == id);
+console.log(data)
+//  let whatever = data.filter(ele => ele.id == id);
  let whatever = data[id]
-//  console.log(whatever)
+ console.log(whatever)
  setCartItems(previtems =>[...previtems, whatever]);
+ console.log(cartItems)
 
 
   const exist = cartItems.find((x) => x.id === whatever.id);
  
+  let cartItemsCopy = [...cartItems];
   if (exist) {
     console.log(exist)
-    setCartItems(
+    cartItemsCopy =
       cartItems.map((x) =>
         x.id === whatever.id ? { ...exist, qty: exist.qty + 1 } : x
-      )
-    );
+      );
   } else {
-    setCartItems([...cartItems, { ...whatever, qty: 1 }]);
+    cartItemsCopy = [...cartItems, { ...whatever, qty: 1 }];
   }
- 
+  setCartItems(cartItemsCopy);
+  let stringCartItems = JSON.stringify(cartItemsCopy);
+  console.log(stringCartItems);
+  window.localStorage.setItem('cartItems', stringCartItems);
 };
 
 
 
 
 console.log(cartItems)
+// console.log(data.map((ele) => ele.description))
 
 
   return(
-    <ShoppingContext.Provider value={{data, setData, cartItems, setCartItems, onAdd}}>
+    <ShoppingContext.Provider value={{data, setData, cartItems, setCartItems, onAdd, getProduct}}>
       {props.children}
     </ShoppingContext.Provider>
   );
 }
+

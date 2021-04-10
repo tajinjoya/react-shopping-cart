@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {ShoppingProvider} from './ShoppingContext';
 import Product from './Product';
 import Cart from './cart';
+import ProductDetails from './ProductDetails';
 import './App.css';
 
 
@@ -15,9 +16,13 @@ const App = () => {
    <div className="App">
    <Router>
    
-    <Route  path="/" component={Product} exact/>
-    <Route path="/cart" component={Cart} exact/>
+   <Switch>
+
+    <Route exact path="/" component={Product} />
   
+    <Route path="/cart/:id" component={ProductDetails} />
+    <Route path="/cart" component={Cart}/>
+    </Switch>
     </Router>
     </div>
     </ShoppingProvider>
