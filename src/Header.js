@@ -4,7 +4,8 @@ import cart from './img/366-3668689_transparent-shopping-cart-logo-hd-png-downlo
 import {ShoppingContext} from './ShoppingContext';
 import {Link} from 'react-router-dom'
 
-const Header = () => {
+const Header = (props) => {
+  console.log(props.value)
   const value = useContext(ShoppingContext);
   let totalQty =value.cartItems.map(ele => ele.qty).reduce((ac, cv)=> ac + cv,0);
   return (

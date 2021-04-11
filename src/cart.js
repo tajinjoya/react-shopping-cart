@@ -4,10 +4,13 @@ import {ShoppingContext} from './ShoppingContext';
 import {Link} from 'react-router-dom';
 import Header from './Header';
 import CartList from './CartList';
+import { useParams} from 'react-router-dom';
 
-const Cart = () => {
+const Cart = (props) => {
   const value = useContext(ShoppingContext);
  let cartData = value.cartItems.flat(Infinity);
+ const {id} = useParams();
+ console.log(id)
   // console.log(value.cartItems.slice(1))
   // value.cartItems.map((ele,i) => {
   //   console.log(ele);
@@ -20,13 +23,13 @@ const Cart = () => {
   // let local =JSON.parse(window.localStorage.getItem('cartItems'));
   // let cartData = local.flat(Infinity)
 
-  let picItems = cartData.map((ele) => ele.image);
-  console.log(picItems)
-  let subtotal = cartData.map((ele) => ele.price * ele.qty);
-  console.log(subtotal)
-  let total = subtotal.reduce((ac, cv)=> ac + cv,0)
-  console.log(total)
-  
+  // let picItems = cartData.map((ele) => ele.image);
+  // console.log(picItems)
+  // let subtotal = cartData.map((ele) => ele.price * ele.qty);
+  // console.log(subtotal)
+  // let total = subtotal.reduce((ac, cv)=> ac + cv,0)
+  // console.log(total)
+
 
 
 
@@ -41,7 +44,7 @@ return (
  </div>
  
  <div className="backtohome">
- <div className="backtohome-button"><button onClick={()=>{alert('You have been checked out! Happy shopping!')}}>checkout</button></div>
+ {/* <div className="backtohome-button"><button onClick={()=>{alert('You have been checked out! Happy shopping!')}}>checkout</button></div> */}
  <Link className="backtohome-link" to="/">Back to Home</Link>
  </div> 
 

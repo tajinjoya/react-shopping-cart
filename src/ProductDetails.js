@@ -66,7 +66,7 @@ const ProductDetails = (props) => {
   const value = useContext(ShoppingContext);
  let cartData = value.cartItems.flat(Infinity);
   const {id} = useParams();
-
+console.log(id)
   let productDetails = value.getProduct(id)
   console.log(productDetails);
   console.log(props)
@@ -86,7 +86,7 @@ return (
 <div>
 
 <div class="cartheader">
-  <Header />
+  <Header value={id} onClick={(e)=>e.target.value}/>
   {/* <h1>Shopping bag</h1> */}
 </div>
 <div  className="Product-details-page">
