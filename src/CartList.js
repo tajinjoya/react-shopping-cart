@@ -1,11 +1,8 @@
-import React from 'react'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { useParams,Link } from 'react-router-dom';
 import './cartList.css';
-
-
-
-
-
+import Button from '@material-ui/core/Button'
 
 
 
@@ -69,10 +66,21 @@ console.log(pictureArray)
       </ul>
       </div>
       <div className="flex-child green">
-<div className="total">Total: {total} kr.</div>
-<div className="backtohome-button"><button onClick={()=>{alert('You have been checked out! Happy shopping!')}}>checkout</button></div>
+      <div style={{ borderTop: "2px solid black", marginLeft: 20, marginRight: 20, marginTop:70}}></div>
+      <div className="total"><p><strong>Total: {total.toFixed(2)} kr.</strong></p></div>
+      <div className="proceed" ><Button variant="contained" color="primary">Proceed</Button></div>
+      <div className="checkout-input"><input type="text" placeholder="email"/></div>
+      <div className="checkout-input"><input type="text" placeholder="Name"/></div>
+      <div className="checkout-input"><input type="text" placeholder="Address"/></div>
+      {/* <div>   <Icon icon={visaIcon} /></div> */}
+      <div className="checkout-button"><Button variant="contained" color="primary" onClick={()=>{alert('You have been checked out! Happy shopping!')}}>checkout</Button></div>
       </div>
-      </div>
+     
+    
+      
+     
+            </div>
+     
       
   
   )

@@ -8,11 +8,11 @@ import {Link} from 'react-router-dom';
 
 
 const ProductList = (props) =>{
- console.log(props)
+ //console.log(props)
   return (
 
     <ul className="product-card">
-    <Link to={`/cart/${props.id - 1}`}><li className="product-image-list" value={props.id -1} onClick={(e)=>(e.target.value)}>
+    <Link to={`/${props.id - 1}`}><li className="product-image-list" key={props.id}>
       <img src={props.image} alt=""/>
       <h3>{props.title}</h3>
       <p>{props.price} kr.</p>

@@ -11,9 +11,10 @@ const Header = (props) => {
   return (
    <header className="header">
      <div>
-     <a href="#/">
-      <h3>Shopping Cart</h3>
-     </a>
+ 
+      <Link to="/"><h3>Shopping Cart</h3></Link>
+ 
+ 
      </div>
      <div> 
      <Link to="/cart"> <img src={cart} alt=""/> </Link>

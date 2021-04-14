@@ -7,6 +7,7 @@ import ProductDetails from './ProductDetails';
 import './App.css';
 
 
+
  
 const App = () => {
  
@@ -20,8 +21,9 @@ const App = () => {
 
     <Route exact path="/" component={Product} />
   
-    <Route path="/cart/:id" component={ProductDetails} />
+   
     <Route path="/cart" component={Cart}/>
+    <Route path="/:id" component={ProductDetails} />
     </Switch>
     </Router>
     </div>

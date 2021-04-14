@@ -9,18 +9,22 @@ let localCart = window.localStorage.getItem('cartItems');
 export const ShoppingProvider = (props) => {
   const [data, setData] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  // const [productDetails1, setProductDetails1] = useState({});
 
  useEffect(()=>{
+   console.log('-------------------------------------------');
   localCart = JSON.parse(localCart);
   if (localCart) setCartItems(localCart)
-   //window.localStorage.setItem('cartItems5', JSON.stringify(cartItems));
  }, []);
 
  const getPosts = async () => {
   try {
   const userPosts = await axios.get("https://fakestoreapi.com/products")
     
-    setData(userPosts.data);  // set State
+    let products = userPosts.data;
+    setData(products);  // set State
+    let stringProducts = JSON.stringify(products);
+    window.localStorage.setItem('products', stringProducts);
   
   } catch (err) {
     console.error(err.message);
@@ -39,11 +43,14 @@ export const ShoppingProvider = (props) => {
 },[]) 
 
 const getProduct = (id) => {
+  let localProducts = window.localStorage.getItem('products');
+  localProducts = JSON.parse(localProducts);
+
   console.log(id)
-console.log(data)
-let whatever = data[id]
-console.log(whatever)
-return whatever;
+  console.log(localProducts)
+  let whatever = localProducts[id]
+  console.log(whatever)
+  return whatever;
 
 }
 
@@ -77,8 +84,9 @@ console.log(data)
 
 
 
-
-console.log(cartItems)
+// console.log(productDetails1)
+console.log(cartItems);
+console.log(data);
 // console.log(data.map((ele) => ele.description))
 
 

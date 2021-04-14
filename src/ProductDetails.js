@@ -58,18 +58,31 @@
 import React, {useContext}from 'react';
 import './ProductDetails.css';
 import {ShoppingContext} from './ShoppingContext';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import Header from './Header';
-import { useParams } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 const ProductDetails = (props) => {
   const value = useContext(ShoppingContext);
- let cartData = value.cartItems.flat(Infinity);
   const {id} = useParams();
-console.log(id)
-  let productDetails = value.getProduct(id)
-  console.log(productDetails);
-  console.log(props)
+  console.log(value);
+  console.log(id)
+
+
+let productDetails = value.getProduct(id);
+console.log(productDetails);
+
+//let productDetailsCopy = {...productDetails1};
+//console.log(productDetailsCopy);
+// array.push(productDetailsCopy)
+// console.log(array.map(ele => ele.description));
+// console.log(productDetails1)
+
+//let stringProductDetails = JSON.stringify(productDetails);
+//console.log(stringProductDetails)
+//window.localStorage.setItem('productDetails1', stringProductDetails);
+//  console.log(productDetails);
+  // console.log(props)
 
   // let picItem = cartData.map((ele) => ele.image);
   // console.log(picItem)
@@ -81,24 +94,26 @@ console.log(id)
   
 
 
+//console.log(productDetails1)
 
 return (
 <div>
 
-<div class="cartheader">
-  <Header value={id} onClick={(e)=>e.target.value}/>
-  {/* <h1>Shopping bag</h1> */}
+<div className="cartheader">
+  <Header />
+
 </div>
 <div  className="Product-details-page">
 <div className="product-image img">
- {<img src={productDetails.image} alt=""/>}
+ 
+   { <img src={productDetails.image} alt=""/> }
 
   </div>
   <div className="product--info">
-  <h3>{productDetails.title}</h3>
+  { <h3>{productDetails.title}</h3>}
   <p>Product details: {productDetails.description}</p>
   <h3>Price: {productDetails.price} kr.</h3>
-   
+
  
   <button value={id} onClick={(e)=>value.onAdd(e.target.value)}>Add to cart</button>
   </div>
@@ -110,7 +125,7 @@ return (
 
  
  <div className="backtohome">
- <div className="backtohome-button"><button onClick={()=>{alert('You have been checked out! Happy shopping!')}}>checkout</button></div>
+
  <Link className="backtohome-link" to="/">Back to Home</Link>
  </div> 
 

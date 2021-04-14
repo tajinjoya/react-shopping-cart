@@ -35,7 +35,7 @@ const Cart = (props) => {
 
 return (
 <section className="basket">
-<div class="cartheader">
+<div className="cartheader">
   <Header />
  
 </div>

@@ -42,12 +42,14 @@ body{
 
 .flex-container {
   display: flex;
+  background-color: #f1f1f1;
 }
 
 .flex-child {
   flex: 1;
   border: 2px solid yellow;
   margin: 20Px;
+  background-color: white;
 }  
 
 .flex-child:first-child {
@@ -69,15 +71,32 @@ body{
   
 } 
 .total{
-  margin: 40px;
+  margin-top: 5px;
+  margin-left: 10px;
   width: 50%;
-  border: 3px solid green;
+  /* border: 3px solid green; */
   padding: 10px
 
 }
 
-.backtohome-button{
-  margin: 40px;
+.checkout-input{
+  
+    margin-top: 2px;
+    margin-left: 10px;
+    width: 50%;
+    /* border: 3px solid green; */
+    padding: 10px
+  
+  
+}
+.proceed{
+  margin-left:30px;
+  font: 20px;
+  padding: 10px;
+  /* border: 3px solid rgb(84, 94, 84); */
+}
+.checkout-button{
+  margin-left: 30px;
   font: 20px;
   padding: 10px
 }
