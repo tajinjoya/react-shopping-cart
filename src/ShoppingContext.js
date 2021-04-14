@@ -25,6 +25,7 @@ export const ShoppingProvider = (props) => {
     setData(products);  // set State
     let stringProducts = JSON.stringify(products);
     window.localStorage.setItem('products', stringProducts);
+
   
   } catch (err) {
     console.error(err.message);
@@ -82,6 +83,13 @@ console.log(data)
   window.localStorage.setItem('cartItems', stringCartItems);
 };
 
+ const removeItem = (id) =>{
+  const items = cartItems.filter(item => item.id !== id);
+
+  setCartItems(items);
+  window.localStorage.removeItem('cartItems');
+}
+
 
 
 // console.log(productDetails1)
@@ -91,7 +99,7 @@ console.log(data);
 
 
   return(
-    <ShoppingContext.Provider value={{data, setData, cartItems, setCartItems, onAdd, getProduct}}>
+    <ShoppingContext.Provider value={{data, setData, cartItems, setCartItems, onAdd, getProduct, removeItem}}>
       {props.children}
     </ShoppingContext.Provider>
   );

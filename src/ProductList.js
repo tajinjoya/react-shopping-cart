@@ -3,10 +3,6 @@ import './Product.css';
 import {Link} from 'react-router-dom';
 
 
-
-
-
-
 const ProductList = (props) =>{
  //console.log(props)
   return (

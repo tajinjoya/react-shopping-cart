@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { useParams,Link } from 'react-router-dom';
 import './cartList.css';
-import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button';
+import img from './img/download.png';
 
 
 
 const CartList = (props) =>{
-
+console.log(props.remove)
   // const {id} = useParams();
   let what =props.cartData[0]
 console.log(props.cartData[0]);
@@ -46,15 +47,16 @@ console.log(pictureArray)
     <div className="flex-container">
     <div className="flex-child magenta">
     <ul className="main--ul">
-    {props.cartData.map((value, index) => (
-         <li className="cart--list" key={index}>
+    {props.cartData.length === 0 ? <h3>Cart is empty</h3> : props.cartData.map((value, index) => (
+         <li className="cart--list" key={index} >
+         <button className="removeIcon" onClick={() => props.remove(value.id)}><img src={img} alt=""/></button>
                 <div className="cart--image">
                   <img src={value.image} alt=""/>
                    <p>{value.qty} x {value.title}</p>
                    <p>SubTotal: {value.qty * value.price} kr.</p>
                   
                 </div >
-                
+               
                
                 </li>
                 

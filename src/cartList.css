@@ -100,3 +100,13 @@ body{
   font: 20px;
   padding: 10px
 }
+
+.removeIcon{
+  float: right;
+  /* margin-top:-60px; */
+  height: 2px;
+  width: 2px;
+  padding: 100px;
+  background-color: white;
+  border: none;
+}

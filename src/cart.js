@@ -8,6 +8,8 @@ import { useParams} from 'react-router-dom';
 
 const Cart = (props) => {
   const value = useContext(ShoppingContext);
+  console.log(value.removeItem);
+ let remove = value.removeItem;
  let cartData = value.cartItems.flat(Infinity);
  const {id} = useParams();
  console.log(id)
@@ -40,7 +42,7 @@ return (
  
 </div>
  <div>
- <CartList cartData={cartData}/>
+ <CartList cartData={cartData} remove={remove}/>
  </div>
  
  <div className="backtohome">
