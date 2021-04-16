@@ -1,13 +1,13 @@
 import React,{useState} from 'react';
 
 function FormSelect(props) {
-  console.log(props.index);
+  console.log("props.index in FormSelect.js "+props.index);
 
   const [proQty,setProQty] = useState(props.productQty);
 
 
  function handleChange(e){
-    setProQty(e.target.value * 1);
+   setProQty(e.target.value);
     console.log(proQty);
    
  };
@@ -17,7 +17,7 @@ function FormSelect(props) {
     console.log("proQty phase1 " + proQty);
     props.updateQty(props.index, proQty);
     console.log("proQty phase2 " + proQty);
-  //  props.setTotalValue();
+    props.setTotalValue();
   };
 
   console.log(proQty);

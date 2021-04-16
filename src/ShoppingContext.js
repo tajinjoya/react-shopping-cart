@@ -64,7 +64,7 @@ const onAdd = (id) => {
 
 
   const exist = cartItems.find((x) => x.id === whatever.id);
- 
+  console.log(exist);
   let cartItemsCopy = [...cartItems];
   if (exist) {
     cartItemsCopy =

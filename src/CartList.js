@@ -22,10 +22,12 @@ const CartList = (props) =>{
     //console.log(qty);
     console.log("productQty[index]" + productQty[index])
     console.log("[index]" + index)
-    console.log("productQty" + productQty)
+    console.log("productQty inside the updateQty function" + productQty)
     productQty[index] = qty;
-    setTotalValue();
+    // setTotalValue();
   };
+
+  
 
   function setTotalValue() {
    let subTotal = [];
@@ -60,21 +62,24 @@ const subTotal = []
 
 
  console.log(total)
+ console.log(finalData.map(ele => ele.id));
  
   return (
     <div className="flex-container">
     <div className="flex-child left-child">
     <ul className="main--ul">
     {props.cartData.length === 0 ? <h3>Cart is empty</h3> : props.cartData.map((value, index) => (
-         <li className="cart--list" key={index} >
+        <li className="cart--list" key={index} >
          <button className="removeIcon" onClick={() => props.remove(value.id)}><img src={img} alt=""/></button>
                 <div className="cart--image">
-                  <img src={value.image} alt=""/>
+                <Link to={`/${value.id - 1}`}><img src={value.image} alt=""/>  </Link>
                    {/* <p>{value.qty} x {value.title}</p>
                    <p>SubTotal: {value.qty * value.price} kr.</p> */}
                    <FormSelect index={index} id={value.id} productQty={value.qty} formData={finalData} price={value.price} title={value.title} updateQty={updateQty} setTotalValue={setTotalValue}/>
                 </div >
                 </li>
+              
+           
                 
     ))}
 
