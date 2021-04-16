@@ -44,13 +44,18 @@ body{
   display: flex;
   background-color: #f1f1f1;
 }
-
+.checkout-div{
+  background-color: white;
+  margin: 100px;
+  padding: 100px;
+}
 .flex-child {
   flex: 1;
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   margin: 20Px;
-  background-color: white;
+  /* background-color: white; */
 }  
+
 
 .flex-child:first-child {
   margin-right: 20px;
@@ -60,10 +65,10 @@ body{
 } 
 
 .cart--image img {
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   background-color: #f1f1f1;
-  margin:50px;
+  margin:10px;
   line-height: 200%;
   padding: 20px;
 
@@ -103,10 +108,10 @@ body{
 
 .removeIcon{
   float: right;
-  /* margin-top:-60px; */
+  /* margin-top:-60px;
   height: 2px;
   width: 2px;
-  padding: 100px;
-  background-color: white;
+  padding: 100px; */
+  background-color: #f1f1f1;
   border: none;
 }

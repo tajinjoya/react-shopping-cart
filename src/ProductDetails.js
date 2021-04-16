@@ -65,12 +65,12 @@ import Button from '@material-ui/core/Button';
 const ProductDetails = (props) => {
   const value = useContext(ShoppingContext);
   const {id} = useParams();
-  console.log(value);
-  console.log(id)
+  // console.log(value);
+  // console.log(id)
 
 
 let productDetails = value.getProduct(id);
-console.log(productDetails);
+// console.log(productDetails);
 
 //let productDetailsCopy = {...productDetails1};
 //console.log(productDetailsCopy);
