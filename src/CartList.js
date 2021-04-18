@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import { useParams,Link } from 'react-router-dom';
 import './cartList.css';
 import Button from '@material-ui/core/Button';
-import img from './img/Screenshot 2021-04-14 at 21.27.15.png';
+import img from './img/delete.png';
 import FormSelect from './FormSelect';
+
 
 
 
@@ -24,9 +25,12 @@ const CartList = (props) =>{
     console.log("[index]" + index)
     console.log("productQty inside the updateQty function" + productQty)
     productQty[index] = qty;
-    // setTotalValue();
+    setTotalValue();
   };
-
+  let productQty = props.cartData.map((ele, i)=> ele.qty);//need to know qty
+  console.log(productQty);
+  let finalData = props.cartData;
+     console.log(productQty);
   
 
   function setTotalValue() {
@@ -43,9 +47,7 @@ const CartList = (props) =>{
   // let total = 0;
   console.log(props.cartData);
 
-  let productQty = props.cartData.map((ele, i)=> ele.qty);//need to know qty
-  console.log(productQty);
-  let finalData = props.cartData;
+
 
   // setTotalValue();
 
@@ -63,7 +65,7 @@ const subTotal = []
 
  console.log(total)
  console.log(finalData.map(ele => ele.id));
- 
+
   return (
     <div className="flex-container">
     <div className="flex-child left-child">

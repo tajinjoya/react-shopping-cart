@@ -1,9 +1,8 @@
 import React,{useState} from 'react';
 
 function FormSelect(props) {
-  console.log("props.index in FormSelect.js "+props.index);
-
-  const [proQty,setProQty] = useState(props.productQty);
+ 
+  const [filter, setFilter] = useState([]);
 
 
  function handleChange(e){

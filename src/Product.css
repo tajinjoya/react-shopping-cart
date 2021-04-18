@@ -5,6 +5,45 @@
   margin: 20px;
   padding: 20px;
   width:95%;
+  flex-direction: column;
+}
+.filter{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-grow: 2;
+  width: 300px;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  margin: 20px;
+ 
+}
+
+.filter select {
+  text-decoration: none;
+  color: #333333;
+  padding: 15px 20px;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f1f1f1;
+  font-size: 17px;
+  border: none;
+  font-weight: bold;
+}
+
+.filter-heading {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+.product-list{
+  display: flex;
+  flex-wrap: wrap;
+  background-color:#f1f1f1;
+  justify-content: center;
+  
 }
 
 .product-card {
@@ -13,12 +52,12 @@
   margin-right: 10px;
   padding: 70px;
   width: 400px;
-  text-align: center;
-  /* background-color: black; */
+  /* text-align: center; */
+  background-color:white;
   display: flex;
   /* justify-content: center; */
 
-   background-color: white;
+   /* background-color: black */
 
 }
 .product-card  > div {
