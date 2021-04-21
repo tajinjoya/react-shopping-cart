@@ -3,6 +3,7 @@ import ProductList from './ProductList';
 import {ShoppingContext} from './ShoppingContext';
 import Header from './Header';
 import './Product.css';
+import Search from './Search';
 
 
 
@@ -43,6 +44,9 @@ const Product = (props) => {
           <option value="women clothing">Women clothing</option>
         </select>
         </div>
+      <div className="search-div">
+        <Search />
+      </div>
 <div className="product-list">
   {filter && filter!== "Sort by"? filteredData.map(product =>(<ProductList title={product.title} 
                                     image={product.image} 

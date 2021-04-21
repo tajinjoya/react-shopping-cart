@@ -2,6 +2,7 @@ import React, {useState, createContext, useEffect} from 'react';
 import axios from 'axios';
 export const ShoppingContext = createContext({});
 
+
 let localCart = window.localStorage.getItem('cartItems');
 
 export const ShoppingProvider = (props) => {
@@ -15,24 +16,42 @@ export const ShoppingProvider = (props) => {
   if (localCart) setCartItems(localCart)
  }, []);
 
- const getPosts = async () => {
-  try {
-  const userPosts = await axios.get("https://fakestoreapi.com/products")
-    
-    let products = userPosts.data;
-    setData(products);  // set State
-    let stringProducts = JSON.stringify(products);
-    window.localStorage.setItem('products', stringProducts);
+//  const getPosts = async () => {
+//   try {
+//   const userPosts = await axios.get('https://fakestoreapi.com/products')
+//     console.log(userPosts)
+//     let products = userPosts.data;
+//     setData(products);  // set State
+//     let stringProducts = JSON.stringify(products);
+//     window.localStorage.setItem('products', stringProducts);
 
   
-  } catch (err) {
-    console.error(err.message);
+//   } catch (err) {
+//     console.error(err.message);
+//   }
+// };
+const getData=()=>{
+  fetch('data.json'
+  ,{
+    headers : { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+     }
   }
-};
-  
+  )
+    .then(function(response){
+      console.log(response)
+      return response.json();
+    })
+    .then(function(myJson) {
+      console.log(myJson);
+      setData(myJson)
+    });
+}
+console.log(data)
   useEffect(()=>{
-    
-    getPosts()
+    getData()
+    // getPosts()
     // const interval=setInterval(()=>{
     //   getPosts()
     //  },10000)
@@ -54,13 +73,9 @@ const getProduct = (id) => {
 }
 
 const onAdd = (id) => {
-// console.log(id)
-// console.log(data)
-//  let whatever = data.filter(ele => ele.id == id);
  let whatever = data[id]
-//  console.log(whatever)
  setCartItems(previtems =>[...previtems, whatever]);
-//  console.log(cartItems)
+
 
 
   const exist = cartItems.find((x) => x.id === whatever.id);
@@ -85,11 +100,6 @@ const onAdd = (id) => {
   setCartItems(items);
   window.localStorage.removeItem('cartItems');
 }
-
-
-
-
-
 
   return(
     <ShoppingContext.Provider value={{data, setData, cartItems, setCartItems, onAdd, getProduct, removeItem}}>
