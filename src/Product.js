@@ -3,7 +3,9 @@ import ProductList from './ProductList';
 import {ShoppingContext} from './ShoppingContext';
 import Header from './Header';
 import './Product.css';
-import Search from './Search';
+// import Search from './Search';
+// import SearchField from 'react-search-field';
+import './Product.css';
 
 
 
@@ -11,7 +13,9 @@ const Product = (props) => {
   const value = useContext(ShoppingContext);
 
   const [filter, setFilter] = useState("");
-  const [filteredData, setFilteredData] = useState([])
+  const [filteredData, setFilteredData] = useState([]);
+  const [search, setSearch] = useState("");
+  const [searchData, setSearchData] = useState([]);
 
   function handleChange(e){
     setFilter(e.target.value);
@@ -26,11 +30,11 @@ const Product = (props) => {
     );
   }, [filter, value.data]);
  
-  console.log(filter);
-  console.log(value.data.filter(ele => ele.category === filter))
+  useEffect(()=> {
+    setSearchData(value.data.filter(item => item.title.toLowerCase().includes(search.toLowerCase())))
+  },[search, value.data])
 
-  console.log(value.data);
-  console.log(filteredData);
+  console.log(search);
   return (
     <div className="container">
     <Header />
@@ -45,10 +49,23 @@ const Product = (props) => {
         </select>
         </div>
       <div className="search-div">
-        <Search />
+      {/* <SearchField 
+      placeholder='Search item'
+      onChange={(e) => setSearch(e.target.value)}
+      /> */}
+        {/* <Search data={value.data}/> */}
+        <input
+        type="text"
+        placeholder="Search"
+        onChange={(e) => setSearch(e.target.value)}
+    />
       </div>
 <div className="product-list">
-  {filter && filter!== "Sort by"? filteredData.map(product =>(<ProductList title={product.title} 
+  {search?searchData.map(product =>(<ProductList title={product.title} 
+                                   image={product.image} 
+                                   id={product.id} 
+                                   price={product.price}
+                                    />)):filter && filter!== "Sort by"? filteredData.map(product =>(<ProductList title={product.title} 
                                     image={product.image} 
                                     id={product.id} 
                                     price={product.price}
@@ -65,13 +82,6 @@ const Product = (props) => {
     </div>
 
    
-
-
-     
-   
-
-    
-
    
   )
 }
