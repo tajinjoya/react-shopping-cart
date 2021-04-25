@@ -16,42 +16,42 @@ export const ShoppingProvider = (props) => {
   if (localCart) setCartItems(localCart)
  }, []);
 
-//  const getPosts = async () => {
-//   try {
-//   const userPosts = await axios.get('https://fakestoreapi.com/products')
-//     console.log(userPosts)
-//     let products = userPosts.data;
-//     setData(products);  // set State
-//     let stringProducts = JSON.stringify(products);
-//     window.localStorage.setItem('products', stringProducts);
+ const getPosts = async () => {
+  try {
+  const userPosts = await axios.get('https://fakestoreapi.com/products')
+    console.log(userPosts)
+    let products = userPosts.data;
+    setData(products);  // set State
+    let stringProducts = JSON.stringify(products);
+    window.localStorage.setItem('products', stringProducts);
 
   
-//   } catch (err) {
-//     console.error(err.message);
-//   }
-// };
-const getData=()=>{
-  fetch('data.json'
-  ,{
-    headers : { 
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-     }
+  } catch (err) {
+    console.error(err.message);
   }
-  )
-    .then(function(response){
-      console.log(response)
-      return response.json();
-    })
-    .then(function(myJson) {
-      console.log(myJson);
-      setData(myJson)
-    });
-}
+};
+// const getData=()=>{
+//   fetch('data.json'
+//   ,{
+//     headers : { 
+//       'Content-Type': 'application/json',
+//       'Accept': 'application/json'
+//      }
+//   }
+//   )
+//     .then(function(response){
+//       console.log(response)
+//       return response.json();
+//     })
+//     .then(function(myJson) {
+//       console.log(myJson);
+//       setData(myJson)
+//     });
+// }
 console.log(data)
   useEffect(()=>{
-    getData()
-    // getPosts()
+    // getData()
+    getPosts()
     // const interval=setInterval(()=>{
     //   getPosts()
     //  },10000)

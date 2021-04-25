@@ -3,8 +3,7 @@ import ProductList from './ProductList';
 import {ShoppingContext} from './ShoppingContext';
 import Header from './Header';
 import './Product.css';
-// import Search from './Search';
-// import SearchField from 'react-search-field';
+import SearchField from 'react-search-field';
 import './Product.css';
 
 
@@ -44,24 +43,23 @@ const Product = (props) => {
           <option value="Sort by">Sort by</option>
           <option value="electronics">Electronics</option>
           <option value="jewelery">Jewelery</option>
-          <option value="men clothing">Men clothing</option>
-          <option value="women clothing">Women clothing</option>
+          <option value="men's clothing">Men clothing</option>
+          <option value="women's clothing">Women clothing</option>
         </select>
         </div>
       <div className="search-div">
-      {/* <SearchField 
-      placeholder='Search item'
-      onChange={(e) => setSearch(e.target.value)}
-      /> */}
-        {/* <Search data={value.data}/> */}
-        <input
-        type="text"
-        placeholder="Search"
-        onChange={(e) => setSearch(e.target.value)}
-    />
+      <SearchField 
+      placeholder="Search..."
+      onChange={(value, event) => setSearch(value)}
+      />
+    
       </div>
-<div className="product-list">
-  {search?searchData.map(product =>(<ProductList title={product.title} 
+ <div className="product-list">
+  {searchData.length === 0?<div className="noMatch-div"><h3>No matching items!</h3>
+                                <p>Your search {search} did not match any results.</p>
+                                 <p>Please check the spelling or try again with a less specific term</p>
+                                 </div>:
+  search?searchData.map(product =>(<ProductList title={product.title} 
                                    image={product.image} 
                                    id={product.id} 
                                    price={product.price}
@@ -74,7 +72,7 @@ const Product = (props) => {
                                     id={product.id} 
                                     price={product.price}
                                     onAdd={value.onAdd}/>))}
-                                    </div>
+  </div>
 
                                 
 
