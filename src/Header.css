@@ -1,7 +1,7 @@
 
 
 .header {
-  width: 100%; 
+  /* width: 100%;  */
   /* height: auto; */
   margin: 30px;
   display: flex;
@@ -9,6 +9,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .header > div {
@@ -33,7 +34,7 @@ a:hover {
 }
 
 a:active {
-  color: blue;
+  color: #3333;
 }
 
 img {

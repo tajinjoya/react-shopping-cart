@@ -3,7 +3,7 @@ import './ProductDetails.css';
 import {ShoppingContext} from './ShoppingContext';
 import {Link, useParams} from 'react-router-dom';
 import Header from './Header';
-import Button from '@material-ui/core/Button';
+import Button from './Button';
 
 const ProductDetails = (props) => {
   const value = useContext(ShoppingContext);
@@ -23,10 +23,11 @@ let productDetails = value.getProduct(id);
       { <img src={productDetails.image} alt=""/> }
       </div>
       <div className="product--info">
-      { <h3>{productDetails.title}</h3>}
+       <h3>{productDetails.title}</h3>
       <p>Product details: {productDetails.description}</p>
       <h3>Price: {productDetails.price} kr.</h3>
       <button value={id} onClick={(e)=>value.onAdd(e.target.value)}>Add to cart</button>
+      {/* <Button value={id} onClick={(e)=>value.onAdd(e.target.value)}>Add to cart</Button> */}
       </div>
       </div>
       <div className="backtohome">

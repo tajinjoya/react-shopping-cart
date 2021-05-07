@@ -12,6 +12,7 @@ export const ShoppingProvider = (props) => {
 
  useEffect(()=>{
    console.log('-------------------------------------------');
+  //  let localCart = window.localStorage.getItem('cartItems');
   localCart = JSON.parse(localCart);
   if (localCart) setCartItems(localCart)
  }, []);
@@ -91,7 +92,7 @@ const onAdd = (id) => {
   }
   setCartItems(cartItemsCopy);
   let stringCartItems = JSON.stringify(cartItemsCopy);
-  window.localStorage.setItem('cartItems', stringCartItems);
+  window.localStorage.setItem('cartItems', stringCartItems);//** */
 };
 
  const removeItem = (id) =>{
@@ -99,6 +100,7 @@ const onAdd = (id) => {
 
   setCartItems(items);
   window.localStorage.removeItem('cartItems');
+  localStorage.clear();
 }
 
   return(

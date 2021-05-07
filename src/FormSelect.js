@@ -1,28 +1,87 @@
-import React,{useState} from 'react';
+import React,{useState, useContext, useEffect} from 'react';
+import {ShoppingContext} from './ShoppingContext';
 
 function FormSelect(props) {
+  const value = useContext(ShoppingContext);
+  let arrayQty = value.cartItems.map(ele=> ele.qty);
+  console.log(value.cartItems)
+  console.log(arrayQty)
   console.log("props.index in FormSelect.js "+props.index);
 
   const [proQty,setProQty] = useState(props.productQty);
-
+  const [finalItems, setFinalItems] = useState(value.cartItems);
+  // const [qtyArray, setQtyArray] = useState([]);
 
  function handleChange(e){
+   console.log(e.target.value);
+   console.log(props.id);
    setProQty(e.target.value);
     console.log(proQty);
-   
  };
 
   function handleSubmit(e){
     e.preventDefault();
+  
     console.log("proQty phase1 " + proQty);
-    props.updateQty(props.index, proQty);
+    // props.updateQty(props.index, proQty);
     console.log("proQty phase2 " + proQty);
-    // props.setTotalValue();
+    console.log(props.id);
+    setFinalItems(prevItems=>[...prevItems,
+      ...value.cartItems.map(ele => ele.id === props.id ? ele.qty = proQty*1: 0)
+     ]);
+     console.log(finalItems);
+    //  const totalArray = finalItems.map(ele => ele.qty);
+    //  console.log(totalArray);
+
+    props.updateFinalItems(props.index, proQty);
+   
   };
 
+
   console.log(proQty);
+  console.log(finalItems)
+
+ 
+ 
+// //this useeffect is not working, not updating the finalQty, the way it does from outsude useEffect ***
+//   useEffect(() => {
+//   let finalItemString = [...finalItems]
+//   let finalQty = finalItemString.filter(ele => typeof ele === 'object').map(ele => ele.qty);
+//    setQtyArray(finalQty);
+//    console.log(qtyArray);
+//   }, [])
+/// may be now i need to save it in local
+  // console.log(qtyArray)
+
+   
+
+  
+
+
+
+ 
+
+
+ 
+  // let finalQtystring = [...finalQty];
+ 
+  // localStorage.setItem('finalQty',JSON.stringify(finalQtystring));
+   
+
+
+  
+
+
+  //   const items = JSON.parse(localStorage.getItem('finalQty'));
+ 
+ 
+  const totalArray = finalItems.filter(ele => typeof ele === 'object').map(ele => ele.price * ele.qty)
+  console.log(totalArray);
+  let finalTotal = totalArray.reduce((ac, cv)=> ac +cv, 0);
+  console.log(finalTotal)
 
     return (
+      
       <form onSubmit={handleSubmit}>
         <h2>Choose Quantity</h2>
         <select onChange={handleChange} value={proQty}>
@@ -36,12 +95,24 @@ function FormSelect(props) {
           <option value="8">8</option>
           <option value="9">9</option>
           <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
         </select>
         <button type="submit">Submit</button>
         <p>{proQty} X {props.title}</p>
         <p>{proQty} X {props.price}</p>
         <p>{(proQty  * props.price).toFixed(2)}  </p>
+        <p>Total: {finalTotal}</p>
       </form> 
+     
       
     );
 }

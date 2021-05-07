@@ -9,6 +9,7 @@
   padding: 20px;
   justify-content: center;
   text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
 
 }
 .cartheader {
@@ -22,15 +23,18 @@
   background-color: white;
   width: 95%;
   margin: 70px;
+  display: flex;
 }
-.backtohome{
+.backtohome {
   display: flex;
   justify-content: center;
   margin: 10px;
   padding: 20px;
   flex-direction: column;
   text-align: center;
+ 
 }
+
 
 .backtohome-button{
   margin: 10px;
@@ -46,6 +50,8 @@
   display:flex;
 } 
 
+
+
 .cartItem{
   height: 200px;
   width: 200px;
@@ -53,6 +59,7 @@
   margin:20px;
   line-height: 200%;
 }
+
 
 
 
