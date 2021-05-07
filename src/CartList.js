@@ -9,6 +9,7 @@ import FormSelect from './FormSelect';
 
 
 
+
 const CartList = (props) =>{
   let subTotal = [];
   for (let [index, entry] of props.cartData.entries()) {

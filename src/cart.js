@@ -3,6 +3,7 @@ import React, {useContext}from 'react';
 import {ShoppingContext} from './ShoppingContext';
 import {Link} from 'react-router-dom';
 import Header from './Header';
+import HeaderPromotion from './Header-Promotion';
 import CartList from './CartList';
 import { useParams} from 'react-router-dom';
 
@@ -19,6 +20,7 @@ return (
 <section className="basket">
 <div className="cartheader">
   <Header />
+  <HeaderPromotion />
  
 </div>
  <div>

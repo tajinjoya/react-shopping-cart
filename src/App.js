@@ -8,6 +8,7 @@ import './App.css';
 
 
 
+
  
 const App = () => {
  
@@ -18,7 +19,7 @@ const App = () => {
    <Router>
    
    <Switch>
-
+  
     <Route exact path="/" component={Product} />
   
    

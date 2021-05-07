@@ -2,6 +2,7 @@ import React,{useContext, useState, useEffect} from 'react';
 import ProductList from './ProductList';
 import {ShoppingContext} from './ShoppingContext';
 import Header from './Header';
+import HeaderPromotion from './Header-Promotion';
 import './Product.css';
 import SearchField from 'react-search-field';
 import './Product.css';
@@ -37,6 +38,7 @@ const Product = (props) => {
   return (
     <div className="container">
     <Header />
+    <HeaderPromotion />
     <div className="filter">
         {/* <h2 className="filter-heading">Sort by</h2> */}
         <select onChange={handleChange} value={filter}>

@@ -6,9 +6,11 @@ import {Link} from 'react-router-dom'
 
 const Header = (props) => {
   const value = useContext(ShoppingContext);
-
-
-  let totalQty = value.cartItems.map(ele => ele.qty).reduce((ac, cv)=> ac + cv,0);
+  // const[totalQty, setTotalQty] = useState()
+  // useEffect(()=> {
+  //   setTotalQty(value.cartItems.map(ele => ele.qty).reduce((ac, cv)=> ac + cv,0));
+  // }, [totalQty])
+let totalQty = value.cartItems.map(ele => ele.qty).reduce((ac, cv)=> ac + cv,0);
 
   
   

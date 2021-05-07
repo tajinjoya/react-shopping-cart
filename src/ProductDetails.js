@@ -3,7 +3,7 @@ import './ProductDetails.css';
 import {ShoppingContext} from './ShoppingContext';
 import {Link, useParams} from 'react-router-dom';
 import Header from './Header';
-import Button from './Button';
+import HeaderPromotion from './Header-Promotion';
 
 const ProductDetails = (props) => {
   const value = useContext(ShoppingContext);
@@ -13,9 +13,10 @@ const ProductDetails = (props) => {
 let productDetails = value.getProduct(id);
     return (
     <div>
-
+    <Header />
+    <HeaderPromotion />
     <div className="cartheader">
-      <Header />
+    
 
     </div>
     <div  className="Product-details-page">
