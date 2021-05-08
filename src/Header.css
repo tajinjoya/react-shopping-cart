@@ -14,7 +14,9 @@
   border-width: 1px;
   border-color: lightgray;
 }
-
+.shopname{
+  font-size: 30px;
+}
 .header > div {
   margin: 10px;
   padding: 20px;
@@ -34,6 +36,7 @@ a:visited {
 
 a:hover {
   color: hotpink;
+  font-style: italic;
 }
 
 a:active {
@@ -45,4 +48,14 @@ img {
   width: 60px;
 
 }
+
+.logo{
+  height:40px;
+  width: 60px;
+} 
+
+.logo:hover{
+  zoom:150%
+}
+
 
