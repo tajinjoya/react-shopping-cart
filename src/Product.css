@@ -92,8 +92,6 @@
 .product-card  > div {
   background-color: white;
   margin-top: 8px;
- 
-
 }
 
 ul{
@@ -104,14 +102,65 @@ ul{
   height: 300px;
   width: 300px;
   background-color: #f1f1f1;
+  position: relative
 
 }
 
 
-.product-image-list img:hover,
-.product-image-list img:focus{
+/* .product-image-list img:hover{
   width:320px;
   height:320px;
-  /* background-color: #f1f1f1; */
-} 
+}  */
+
+
+.container-link{
+
+  position:relative;
+  /* background-color: lime; */
+  display: flex;
+  justify-content: center;
+  }
+
+  .container-link a{
+
+    position: absolute;
+    bottom:15em;
+    right:20em;
+    left:3em;
+    margin: 10px;
+  
+    border-radius:1.5em;
+    color:white;
+    text-transform:uppercase;
+    text-align: center;
+    /* padding:1em 1.5em; */
+     padding:20px;
+     width:300px;
+     border:solid 1px;
+     opacity: 0;
+     /* font-size: 60px; */
+     
+    }
+
+    .container-link a:hover{
+      position: absolute;
+      bottom:15em;
+      right:20em;
+      left:3em;
+      margin: 10px;
+      background: linear-gradient(to right, rgba(173,91,152,255) , rgba(191,102,120,255),rgba(202,108,99,255));
+      border-radius:1.5em;
+      color:black;
+      text-transform:uppercase;
+      text-align: center;
+      /* padding:1em 1.5em; */
+       padding:20px;
+       width:200px;
+       /* border:solid 1px; */
+       border-style: none;
+       opacity: 1;
+    
+      }
+    
+    
 

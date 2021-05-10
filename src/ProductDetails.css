@@ -17,6 +17,7 @@
   display:flex;
   justify-content: flex-start;
   transition: transform .5s ease-in-out;
+  
 }
 
 .product-image img:hover{
@@ -44,21 +45,21 @@
   color:#333333;
 
 }
-button{
+.Product-details-button{
   margin:5px;
-
-  background-color: #333333;
-  width:150px;
+  background: linear-gradient(to right, rgba(173,91,152,255) , rgba(191,102,120,255),rgba(202,108,99,255));
+  width:180px;
   height: 60px;
   color:#fdfdfd;
   font-size: 20px;
   font-weight: bold;
+  border-style: none;
 }
-button:hover{
-  background-color:#f1f1f1;
-  width:180px;
+.Product-details-button:hover{
+  background:black;
+  width:185px;
   height: 50px;
-  color:#333333;
+  color: #f1f1f1;
   font-size: 20px;
   font-weight: bold;
 }

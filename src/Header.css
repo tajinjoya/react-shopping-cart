@@ -1,6 +1,7 @@
 
 
 .header {
+  padding: 10px;
   width: 100%; 
   height: auto;
   /* margin: 30px; */
@@ -10,16 +11,50 @@
   flex-wrap: wrap;
   justify-content: space-between;
   font-family: 'Roboto Condensed', sans-serif;
-  border-style: solid;
+  border-style: none;
   border-width: 1px;
-  border-color: lightgray;
+  /* border-color: lightgray; */
+  background: linear-gradient(to right, rgba(173,91,152,255) , rgba(191,102,120,255),rgba(202,108,99,255));
 }
 .shopname{
-  font-size: 30px;
+  font-size: 35px;
+  font-weight: bold;
+  color:#f1f1f1;
+  
+}
+.slogan{
+
+  color:#f1f1f1;
+  font-style: italic;
+  font-weight: bold;
+}
+.slogan:hover{
+  color:purple;
+  font-size: 25px;
+}
+
+.Shopping-bag-header{
+  /* margin-top: 80px;
+  margin-right: 70px; */
+  color:#f1f1f1;
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+.Shopping-bag-header:hover{
+  color:purple;
+  font-size: 25px;
+}
+
+.Shopping-bag-header-image{
+  margin:12px;
+  height:30px;
+  width: 30px;
 }
 .header > div {
-  margin: 10px;
-  padding: 20px;
+  margin: 5px;
+  padding: 5px;
   font-size: 20px;
   display: flex;
   flex-direction: row;
@@ -43,11 +78,7 @@ a:active {
   color: #3333;
 }
 
-img {
-  height:40px;
-  width: 60px;
 
-}
 
 .logo{
   height:40px;

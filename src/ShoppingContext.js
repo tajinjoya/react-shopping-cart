@@ -11,6 +11,8 @@ export const ShoppingProvider = (props) => {
 
 
  useEffect(()=>{
+  getPosts()
+
    console.log('-------------------------------------------');
   //  let localCart = window.localStorage.getItem('cartItems');
   localCart = JSON.parse(localCart);
@@ -50,16 +52,15 @@ export const ShoppingProvider = (props) => {
 //     });
 // }
 console.log(data)
-  useEffect(()=>{
-    // getData()
-    getPosts()
-    // const interval=setInterval(()=>{
-    //   getPosts()
-    //  },10000)
+//   useEffect(()=>{
+//     // getData()
+//     // const interval=setInterval(()=>{
+//     //   getPosts()
+//     //  },10000)
        
        
-    //  return()=>clearInterval(interval)
-},[]) 
+//     //  return()=>clearInterval(interval)
+// },[]) 
 
 const getProduct = (id) => {
   let localProducts = window.localStorage.getItem('products');

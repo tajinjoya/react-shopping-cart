@@ -65,6 +65,7 @@ const Product = (props) => {
                                    image={product.image} 
                                    id={product.id} 
                                    price={product.price}
+                                 
                                     />)):filter && filter!== "Sort by"? filteredData.map(product =>(<ProductList title={product.title} 
                                     image={product.image} 
                                     id={product.id} 

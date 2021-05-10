@@ -27,11 +27,12 @@ let productDetails = value.getProduct(id);
        <h3>{productDetails.title}</h3>
       <p>Product details: {productDetails.description}</p>
       <h3>Price: {productDetails.price} kr.</h3>
-      <button value={id} onClick={(e)=>value.onAdd(e.target.value)}>Add to cart</button>
+      <button className="Product-details-button" value={id} onClick={(e)=>value.onAdd(e.target.value)}>Add to cart</button>
       {/* <Button value={id} onClick={(e)=>value.onAdd(e.target.value)}>Add to cart</Button> */}
       </div>
       </div>
       <div className="backtohome">
+      {/* <Header /> */}
       <Link className="backtohome-link" to="/">Back to Home</Link>
       </div> 
         </div>
