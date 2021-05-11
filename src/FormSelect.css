@@ -1,0 +1,6 @@
+.form-div{
+  display: flex;
+  flex-direction: row;
+  margin:40px;
+  /* padding:40px; */
+}

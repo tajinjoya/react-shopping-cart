@@ -1,10 +1,11 @@
 import React, {useContext}from 'react';
-// import './cart.css';
+import './cart.css';
 import {ShoppingContext} from './ShoppingContext';
 import {Link} from 'react-router-dom';
 import Header from './Header';
 import HeaderPromotion from './Header-Promotion';
 import CartList from './CartList';
+import Footer from './Footer';
 import { useParams} from 'react-router-dom';
 
 
@@ -17,22 +18,21 @@ const value = useContext(ShoppingContext);
 //  console.log(id)
 
 return (
-<section className="basket">
-<div className="cartheader">
+<div className="main-cart">
+
   <Header />
   <HeaderPromotion />
  
-</div>
- <div>
+
+
  <CartList cartData={cartData} remove={remove}/>
 
- </div>
- 
- <div className="backtohome">
- {/* <div className="backtohome-button"><button onClick={()=>{alert('You have been checked out! Happy shopping!')}}>checkout</button></div> */}
- <Link className="backtohome-link" to="/">Back to Home</Link>
- </div> 
-  </section>
+
+
+ <Footer />
+
+
+  </div>
   )
 }
 

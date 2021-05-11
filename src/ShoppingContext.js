@@ -101,7 +101,7 @@ const onAdd = (id) => {
 
   setCartItems(items);
   window.localStorage.removeItem('cartItems');
-  localStorage.clear();
+  // localStorage.clear();
 }
 
   return(

@@ -6,6 +6,7 @@ import HeaderPromotion from './Header-Promotion';
 import './Product.css';
 import SearchField from 'react-search-field';
 import './Product.css';
+import Footer from './Footer';
 
 
 
@@ -77,7 +78,7 @@ const Product = (props) => {
                                     onAdd={value.onAdd}/>))}
   </div>
 
-                                
+      <Footer />                          
 
                                     
     </div>

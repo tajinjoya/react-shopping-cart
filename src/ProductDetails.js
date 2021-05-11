@@ -4,6 +4,8 @@ import {ShoppingContext} from './ShoppingContext';
 import {Link, useParams} from 'react-router-dom';
 import Header from './Header';
 import HeaderPromotion from './Header-Promotion';
+import Footer from './Footer';
+
 
 const ProductDetails = (props) => {
   const value = useContext(ShoppingContext);
@@ -32,8 +34,8 @@ let productDetails = value.getProduct(id);
       </div>
       </div>
       <div className="backtohome">
-      {/* <Header /> */}
-      <Link className="backtohome-link" to="/">Back to Home</Link>
+      <Footer />
+    
       </div> 
         </div>
             

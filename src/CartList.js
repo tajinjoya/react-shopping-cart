@@ -119,25 +119,23 @@ const subTotal = []
 
   return (
     <div className="flex-container">
+    
     <div className="flex-child left-child">
+    <div className="cartList-header"><h1>Shopping bag</h1></div>
     <ul className="main--ul">
-    {props.cartData.length === 0 ? <h3>Cart is empty</h3> : props.cartData.map((value, index) => (
+    {props.cartData.length === 0 ? <h1>YOUR SHOPPING BAG IS EMPTY!</h1> : props.cartData.map((value, index) => (
         <li className="cart--list" key={index} >
         {/* <button class="btn"><i class="fa fa-trash"></i> Trash</button> */}
          {/* <button className="removeIcon btn" onClick={() => props.remove(value.id)}><i className="fa fa-trash removeIcon"></i></button> */}
-         <button className="removeIcon btn" onClick={() => props.remove(value.id)}><img src={img} alt=""/></button>
+        
                 <div className="cart--image">
                 <Link to={`/${value.id - 1}`}><img className="cart--image--image" src={value.image} alt=""/>  </Link>
-                   {/* <p>{value.qty} x {value.title}</p>
-                   <p>SubTotal: {value.qty * value.price} kr.</p> */}
-                   <FormSelect index={index} id={value.id} productQty={value.qty}  price={value.price} title={value.title}  updateFinalItems={updateFinalItems} />
+   
                 </div >
+                <FormSelect index={index} id={value.id} productQty={value.qty}  price={value.price} title={value.title}  updateFinalItems={updateFinalItems} />
+                <button className="removeIcon btn" onClick={() => props.remove(value.id)}><img src={img} alt=""/></button>
                 </li>
-              
-           
-                
     ))}
-
       </ul>
       </div>
       <div className="flex-child right-child">

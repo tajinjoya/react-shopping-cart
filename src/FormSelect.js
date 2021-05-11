@@ -1,5 +1,6 @@
 import React,{useState, useContext, useEffect} from 'react';
 import {ShoppingContext} from './ShoppingContext';
+import './FormSelect.css';
 
 function FormSelect(props) {
   const value = useContext(ShoppingContext);
@@ -40,40 +41,6 @@ function FormSelect(props) {
 
   console.log(proQty);
   console.log(finalItems)
-
- 
- 
-// //this useeffect is not working, not updating the finalQty, the way it does from outsude useEffect ***
-//   useEffect(() => {
-//   let finalItemString = [...finalItems]
-//   let finalQty = finalItemString.filter(ele => typeof ele === 'object').map(ele => ele.qty);
-//    setQtyArray(finalQty);
-//    console.log(qtyArray);
-//   }, [])
-/// may be now i need to save it in local
-  // console.log(qtyArray)
-
-   
-
-  
-
-
-
- 
-
-
- 
-  // let finalQtystring = [...finalQty];
- 
-  // localStorage.setItem('finalQty',JSON.stringify(finalQtystring));
-   
-
-
-  
-
-
-  //   const items = JSON.parse(localStorage.getItem('finalQty'));
- 
  
   const totalArray = finalItems.filter(ele => typeof ele === 'object').map(ele => ele.price * ele.qty)
   console.log(totalArray);
@@ -81,9 +48,12 @@ function FormSelect(props) {
   console.log(finalTotal)
 
     return (
-      
+      <div className="form-div">
       <form onSubmit={handleSubmit}>
-        <h2>Choose Quantity</h2>
+      <p>{props.title}</p>
+      <p>{props.price.toFixed(2)} kr.</p>
+      <p>Subtotal: {(proQty  * props.price).toFixed(2)}</p>
+        {/* <h2>Choose Quantity</h2> */}
         <select onChange={handleChange} value={proQty}>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -107,12 +77,12 @@ function FormSelect(props) {
           <option value="20">20</option>
         </select>
         <button type="submit">Submit</button>
-        <p>{proQty} X {props.title}</p>
-        <p>{proQty} X {props.price}</p>
-        <p>{(proQty  * props.price).toFixed(2)}  </p>
-        <p>Total: {finalTotal}</p>
+        {/* <p>{proQty} X {props.title}</p> */}
+        {/* <p>{proQty} X {props.price}</p> */}
+  
+        {/* <p>Total: {finalTotal}</p> */}
       </form> 
-     
+      </div>
       
     );
 }
