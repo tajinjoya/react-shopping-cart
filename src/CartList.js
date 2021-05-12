@@ -142,10 +142,6 @@ const subTotal = []
         <div className="checkout-div">
       <div style={{ borderTop: "2px solid black", marginLeft: 20, marginRight: 20, marginTop:70}}></div>
       <div className="total"><p><strong>Total: {total.toFixed(2)} kr.</strong></p></div>
-      <div className="proceed" ><button>Proceed</button></div>
-      <div className="checkout-input"><input type="text" placeholder="email"/></div>
-      <div className="checkout-input"><input type="text" placeholder="Name"/></div>
-      <div className="checkout-input"><input type="text" placeholder="Address"/></div>
       <div className="checkout-button"><button onClick={()=>{alert('You have been checked out! Happy shopping!')}}>checkout</button></div>
       </div>
       </div>

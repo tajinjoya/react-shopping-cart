@@ -18,6 +18,7 @@ function FormSelect(props) {
    console.log(props.id);
    setProQty(e.target.value);
     console.log(proQty);
+ 
  };
 
   function handleSubmit(e){
@@ -50,12 +51,12 @@ function FormSelect(props) {
     return (
       <div className="form-div">
       <form onSubmit={handleSubmit}>
-      <p>{props.title}</p>
+      <h3>{props.title}</h3>
       <p>{props.price.toFixed(2)} kr.</p>
-      <p>Subtotal: {(proQty  * props.price).toFixed(2)}</p>
+      <p>Total: {(proQty  * props.price).toFixed(2)} kr.</p>
         {/* <h2>Choose Quantity</h2> */}
-        <select onChange={handleChange} value={proQty}>
-          <option value="1">1</option>
+        <select className="select" onChange={handleChange} value={proQty}>
+          <option className="option" value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
@@ -76,7 +77,7 @@ function FormSelect(props) {
           <option value="19">19</option>
           <option value="20">20</option>
         </select>
-        <button type="submit">Submit</button>
+        <button className="button-form" type="submit">Submit</button>
         {/* <p>{proQty} X {props.title}</p> */}
         {/* <p>{proQty} X {props.price}</p> */}
   

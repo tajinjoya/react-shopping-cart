@@ -10,19 +10,23 @@
 }
 .cart--list{
   display: flex;
-  margin: 5px 100px 5px;
+  /* margin: 5px 100px 5px; */
+  /* background: slateblue; */
   /* padding:30px; */
+ 
+ 
 }
 .checkout-div{
-  background-color: white;
+  background-color: #f1f1f1;
   margin: 100px;
   padding: 100px;
 }
 .flex-child {
-  flex:1;
+  flex:-1;
   /* border: 2px solid yellow; */
-  margin: 20Px;
-  background-color: white;
+  margin:20px;
+  padding: 90px;
+  /* background-color: skyblue; */
 }  
 
 
@@ -34,7 +38,7 @@
 .cart--image img {
   height: 300px;
   width: 300px;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
   margin:10px;
   line-height: 200%;
   padding: 20px;
@@ -42,46 +46,41 @@
 } 
 
 
-.cart--image img:hover,
-.cart--image img:focus{
-  width:320px;
-  height:320px;
-} 
 
 
 .total{
   margin-top: 5px;
   margin-left: 10px;
-  width: 50%;
+  /* width: 50%; */
   /* border: 3px solid green; */
-  padding: 10px
-
-}
-
-.checkout-input{
-  
-    margin-top: 2px;
-    margin-left: 10px;
-    width: 50%;
-    /* border: 3px solid green; */
-    padding: 10px
-  
-  
-}
-.proceed{
-  margin-left:30px;
-  font: 20px;
   padding: 10px;
-  /* border: 3px solid rgb(84, 94, 84); */
+  background: #f1f1f1;
+
 }
-.checkout-button{
-  margin-left: 30px;
-  font: 20px;
-  padding: 10px
+
+
+.checkout-button button{
+  margin:5px;
+  background: linear-gradient(to right, rgba(173,91,152,255) , rgba(191,102,120,255),rgba(202,108,99,255));
+  width:180px;
+  height: 60px;
+  color:#fdfdfd;
+  font-size: 20px;
+  font-weight: bold;
+  border-style: none;
 }
+
+.checkout-button button:hover{
+  background:black;
+  width:185px;
+  height: 50px;
+  color: #f1f1f1;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 
 .removeIcon{
-
 display: flex;
   align-self:baseline;
   background-color: #fdfdfd;
