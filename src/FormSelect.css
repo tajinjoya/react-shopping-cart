@@ -9,6 +9,7 @@
 }
 
 .select{
+  display: flex;
   height:60px;
   width:100px;
   margin:0px 3px 0px;
@@ -19,8 +20,8 @@
 .button-form{
   margin:5px;
   background: linear-gradient(to right, rgba(173,91,152,255) , rgba(191,102,120,255),rgba(202,108,99,255));
-  width:180px;
-  height: 60px;
+  /* width:180px;
+  height: 60px; */
   color:#fdfdfd;
   font-size: 20px;
   font-weight: bold;

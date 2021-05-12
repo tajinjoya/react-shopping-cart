@@ -77,7 +77,7 @@ function FormSelect(props) {
           <option value="19">19</option>
           <option value="20">20</option>
         </select>
-        <button className="button-form" type="submit">Submit</button>
+        <button className="button-form" type="submit">Update Quantity</button>
         {/* <p>{proQty} X {props.title}</p> */}
         {/* <p>{proQty} X {props.price}</p> */}
   

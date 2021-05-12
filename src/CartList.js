@@ -5,6 +5,7 @@ import './cartList.css';
 // import Button from '@material-ui/core/Button';
 import img from './img/delete.png';
 import FormSelect from './FormSelect';
+import CheckOut from './CheckOut';
 
 
 
@@ -139,11 +140,7 @@ const subTotal = []
       </ul>
       </div>
       <div className="flex-child right-child">
-        <div className="checkout-div">
-      <div style={{ borderTop: "2px solid black", marginLeft: 20, marginRight: 20, marginTop:70}}></div>
-      <div className="total"><p><strong>Total: {total.toFixed(2)} kr.</strong></p></div>
-      <div className="checkout-button"><button onClick={()=>{alert('You have been checked out! Happy shopping!')}}>checkout</button></div>
-      </div>
+      <CheckOut total={total}/>
       </div>
       </div>
      

@@ -47,42 +47,8 @@
 
 
 
-
-.total{
-  margin-top: 5px;
-  margin-left: 10px;
-  /* width: 50%; */
-  /* border: 3px solid green; */
-  padding: 10px;
-  background: #f1f1f1;
-
-}
-
-
-.checkout-button button{
-  margin:5px;
-  background: linear-gradient(to right, rgba(173,91,152,255) , rgba(191,102,120,255),rgba(202,108,99,255));
-  width:180px;
-  height: 60px;
-  color:#fdfdfd;
-  font-size: 20px;
-  font-weight: bold;
-  border-style: none;
-}
-
-.checkout-button button:hover{
-  background:black;
-  width:185px;
-  height: 50px;
-  color: #f1f1f1;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-
 .removeIcon{
 display: flex;
-  align-self:baseline;
   background-color: #fdfdfd;
   border: none;
   padding: 12px 16px;
@@ -93,3 +59,7 @@ img{
   width:2em; 
   height:1.5em;
 }
+
+
+ 
+

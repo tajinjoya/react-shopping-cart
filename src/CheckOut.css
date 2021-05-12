@@ -1,0 +1,50 @@
+.checkout-payment{
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 1.5;
+}
+
+.checkout-payment-logo{
+  margin: 0 6px 0;
+  height: 30px;
+  width: 30px;
+}
+
+.checkout-payment-logo img{
+  height: 20px;
+  width: 40px;
+}
+
+
+
+.total{
+  margin-top: 5px;
+  margin-left: 10px;
+  /* width: 50%; */
+  /* border: 3px solid green; */
+  padding: 10px;
+  background: #f1f1f1;
+
+}
+
+
+.checkout-button button{
+  margin:5px;
+  background: linear-gradient(to right, rgba(173,91,152,255) , rgba(191,102,120,255),rgba(202,108,99,255));
+  width:300px;
+  height: 60px;
+  color:#fdfdfd;
+  font-size: 20px;
+  font-weight: bold;
+  border-style: none;
+}
+
+.checkout-button button:hover{
+  background:black;
+  width:320px;
+  height: 50px;
+  color: #f1f1f1;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
