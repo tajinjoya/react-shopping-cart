@@ -2,6 +2,7 @@
   display: flex;
   /* background-color: pink; */
   justify-content: center;
+
 }
 
 .cartList-header{
@@ -10,9 +11,9 @@
 }
 .cart--list{
   display: flex;
-  /* margin: 5px 100px 5px; */
+  margin: 50px; 
   /* background: slateblue; */
-  /* padding:30px; */
+  /* padding:10px; */
  
  
 }
@@ -45,13 +46,18 @@
 
 } 
 
+.removeIcon-div{
+  display:flex;
+  flex-direction: column;
 
+}
 
 .removeIcon{
-display: flex;
-  background-color: #fdfdfd;
+  display: flex;
+  background-color:#fdfdfd;
+  align-self:baseline;
   border: none;
-  padding: 12px 16px;
+  /* padding: 12px 16px; */
   font-size: 16px;
   cursor: pointer;
 }

@@ -126,16 +126,14 @@ const subTotal = []
     <ul className="main--ul">
     {props.cartData.length === 0 ? <h1>YOUR SHOPPING BAG IS EMPTY!</h1> : props.cartData.map((value, index) => (
         <li className="cart--list" key={index} >
-        {/* <button class="btn"><i class="fa fa-trash"></i> Trash</button> */}
-         {/* <button className="removeIcon btn" onClick={() => props.remove(value.id)}><i className="fa fa-trash removeIcon"></i></button> */}
-        
-                <div className="cart--image">
-                <Link to={`/${value.id - 1}`}><img className="cart--image--image" src={value.image} alt=""/>  </Link>
-   
-                </div >
-                <FormSelect index={index} id={value.id} productQty={value.qty}  price={value.price} title={value.title}  updateFinalItems={updateFinalItems} />
-                <button className="removeIcon btn" onClick={() => props.remove(value.id)}><img src={img} alt=""/></button>
-                </li>
+        <div className="cart--image">
+          <Link to={`/${value.id - 1}`}><img className="cart--image--image" src={value.image} alt=""/></Link>
+        </div >
+        <FormSelect index={index} id={value.id} productQty={value.qty}  price={value.price} title={value.title}  updateFinalItems={updateFinalItems} />
+        <div className="removeIcon-div">
+          <button className="removeIcon btn" onClick={() => props.remove(value.id)}><img src={img} alt=""/></button>
+        </div>
+        </li>
     ))}
       </ul>
       </div>
