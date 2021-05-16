@@ -1,11 +1,11 @@
 import React,{useState, useContext, useEffect} from 'react';
 import {ShoppingContext} from './ShoppingContext';
 import './FormSelect.css';
+import img from './img/delete.png';
 
 function FormSelect(props) {
   const value = useContext(ShoppingContext);
   let arrayQty = value.cartItems.map(ele=> ele.qty);
-  console.log(value.cartItems)
   console.log(arrayQty)
   console.log("props.index in FormSelect.js "+props.index);
 
@@ -49,11 +49,11 @@ function FormSelect(props) {
   console.log(finalTotal)
 
     return (
-      <div className="form-div">
-      <form onSubmit={handleSubmit}>
-      <h3>{props.title}</h3>
-      <p>{props.price.toFixed(2)} kr.</p>
-      <p>Total: {(proQty  * props.price).toFixed(2)} kr.</p>
+   <div className="formselect-div">
+      <form className="form-div" onSubmit={handleSubmit}>
+      {/* <h3>{props.title}</h3>
+      <p>{props.price.toFixed(2)} kr.</p> */}
+   
         {/* <h2>Choose Quantity</h2> */}
         <select className="select" onChange={handleChange} value={proQty}>
           <option className="option" value="1">1</option>
@@ -77,13 +77,20 @@ function FormSelect(props) {
           <option value="19">19</option>
           <option value="20">20</option>
         </select>
+        <div>
         <button className="button-form" type="submit">Update Quantity</button>
-        {/* <p>{proQty} X {props.title}</p> */}
-        {/* <p>{proQty} X {props.price}</p> */}
-  
-        {/* <p>Total: {finalTotal}</p> */}
+        </div>
+       
       </form> 
+      <div className="removeIcon-div">
+        <button className="removeIcon btn" onClick={() => value.removeItem(props.id)}><img src={img} alt=""/><span>Remove Item</span>
+   </button>
       </div>
+      <div className="cart-total">
+        <p className="cart-total-text">{proQty}pcs: {(proQty  * props.price).toFixed(2)} kr.</p>
+      </div>
+      </div>
+  
       
     );
 }

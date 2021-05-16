@@ -1,3 +1,13 @@
+.right-child{
+  background-color: #f1f1f1;
+  margin:  10px 10px 10px;
+  padding: 15px 10px;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
 .checkout-payment{
   font-family: 'Roboto Condensed', sans-serif;
   line-height: 1.5;
@@ -18,11 +28,10 @@
 
 .total{
   margin-top: 5px;
-  margin-left: 10px;
-  /* width: 50%; */
-  /* border: 3px solid green; */
+  /* margin-left: 10px; */
   padding: 10px;
-  background: #f1f1f1;
+  /* background: red; */
+
 
 }
 
@@ -45,5 +54,6 @@
   font-size: 20px;
   font-weight: bold;
 }
+
 
 
