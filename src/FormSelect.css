@@ -1,5 +1,5 @@
 
-
+  
 .form-div{
   display: flex;
   flex-direction: row;
@@ -28,19 +28,20 @@
   /* margin:5px; */
   background: linear-gradient(to right, rgba(173,91,152,255) , rgba(191,102,120,255),rgba(202,108,99,255));
   width:130px;
-  height: 30px;
+  height: 60px;
   color:#fdfdfd;
   font-size: 15px;
   font-weight: bold;
   border-style: none;
   align-items: center;
+  justify-content: center;
 }
 
 
 .button-form:hover{
   background:black;
   width:135px;
-  height: 30px;
+  height: 60px;
   color: #f1f1f1;
 
   font-weight: bold;
@@ -49,19 +50,14 @@
 .cart-total{
   display: flex;
   /* align-self:left; */
-  /* margin:15px; */
-  font-weight: bold;
+
+
 
 }
 
 .cart-total-text{
   display:flex;
-
-  /* background-color: paleturquoise; */
-  /* justify-content: flex-end; */
-  /* align-items: flex-end; */
-  width:300px
-
+ font-size: 20px;
 }
 
 
@@ -98,4 +94,6 @@ img{
   width:2em; 
   height:1.5em;
 }
+
+
 

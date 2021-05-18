@@ -1,5 +1,5 @@
-
-
+@media only screen and (min-width: 601px) {
+ 
 .header {
   padding: 10px;
   width: 100%; 
@@ -89,4 +89,71 @@ a:active {
   zoom:150%
 }
 
+}
 
+@media only screen and (max-width: 600px) {
+ 
+  .header {
+    padding: 10px;
+    display: flex;
+    /* background-color: black; */
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    font-family: 'Roboto Condensed', sans-serif;
+    border-style: none;
+    border-width: 1px;
+    /* border-color: lightgray; */
+    background: linear-gradient(to right, rgba(173,91,152,255) , rgba(191,102,120,255),rgba(202,108,99,255));
+  }
+  .shopname{
+    font-size: 20px;
+    /* font-weight: bold; */
+    color:#f1f1f1;
+    
+  }
+  .slogan{
+    color:#f1f1f1;
+    font-style: italic;
+  }
+ 
+  .Shopping-bag-header-link{
+    /* background-color: coral; */
+    margin-left:0px;
+  }
+  .Shopping-bag-header{
+    margin-top:0px;
+    color:#f1f1f1;
+    font-style: italic;
+    font-weight: bold;
+    /* background-color: blueviolet; */
+  }
+  
+  
+  
+  .Shopping-bag-header-image{
+    height:15px;
+    width: 15px;
+    /* background-color: blue; */
+  }
+
+  .Shopping-bag-header-image-link{
+    /* background-color: burlywood; */
+  }
+ 
+  .header > div {
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+  
+  }
+  a:link {
+    text-decoration: none;
+    color:rgb(29, 29, 75);
+  }
+  a:visited {
+    text-decoration: none;
+  }
+  
+  
+}

@@ -1,125 +1,128 @@
-.flex-container {
-  display: flex;
-  /* background-color: pink; */
-  justify-content: center;
-
-}
-
-.cartList-header{
-  display: flex;
-  justify-content:center;
-  margin:20px 10px;
-  padding:20px 10px;
-  /* background:blue */
-}
-.cart--list{
-  /* margin: 0 40px;
-  padding:0 40px; */
-  display: flex; 
-  width:90%;
-  /* background-color: #4caf50; */
-  border-bottom: 1px solid #ddd;
-  /* padding: 50px; */
-
- 
-}
-.cart--list-heading{
-  display:flex;
-  font-size: 20px;
-}
-
-.cart--data{
-  margin:10px;
-  padding:0 30px;
-  font-size: 20px;
-  /* background-color: cyan; */
-  display: flex;
-  justify-content: left;
-}
-.cart--data-formselect{
-  display:flex;
-  margin:10px;
-  padding:0 30px;
-  font-size: 20px;
-  /* background-color: orange; */
-  display: flex;
-  justify-content: left;
-  align-items: end;
-}
-.cart--data-product{
-  margin: 0px 40px;
-  padding: 0px 40px;
-  text-align: center;
-  /* background-color: #4caf50; */
-  /* color: black;
-  font-size: 20px; */
-
-}
-.cart--data-price{
-  margin: 0px 180px;
-  padding: 0px 180px;
-  text-align: center;
-  /* background-color: #4caf50; */
-  /* color: black;
-  font-size: 20px; */
-
-}
-.cart--data-total{
-  margin: 0 -200px;
-  padding: 0 -200px;
-  text-align: center;
-}
-.right-child{
-  background-color:#f1f1f1;
+@media only screen and (min-width: 601px) {
+  .flex-container {
+    display: flex;
+    /* background-color: pink; */
+    justify-content: center;
   
-
+  }
+  
+  .cartList-header{
+    display: flex;
+    justify-content:center;
+    margin:20px 10px;
+    padding:20px 10px;
+    /* background:blue */
+  }
+  .cart--list{
+    /* margin: 0 40px;
+    padding:0 40px; */
+    display: flex; 
+    width:90%;
+    /* background-color: #4caf50; */
+    border-bottom: 1px solid #ddd;
+    /* padding: 50px; */
+  
+   
+  }
+  .cart--list-heading{
+    display:flex;
+    font-size: 20px;
+  }
+  
+  .cart--data{
+    margin:10px;
+    padding:0 30px;
+    font-size: 20px;
+    /* background-color: cyan; */
+    display: flex;
+    justify-content: left;
+  }
+  .cart--data-formselect{
+    display:flex;
+    margin:10px;
+    padding:0 30px;
+    font-size: 20px;
+    /* background-color: orange; */
+    display: flex;
+    justify-content: left;
+    align-items: end;
+  }
+  .cart--data-product{
+    margin: 0px 40px;
+    padding: 0px 40px;
+    text-align: center;
+    /* background-color: #4caf50; */
+    /* color: black;
+    font-size: 20px; */
+  
+  }
+  .cart--data-price{
+    margin: 0px 180px;
+    padding: 0px 180px;
+    text-align: center;
+    /* background-color: #4caf50; */
+    /* color: black;
+    font-size: 20px; */
+  
+  }
+  .cart--data-total{
+    margin: 0 -200px;
+    padding: 0 -200px;
+    text-align: center;
+  }
+  .right-child{
+    background-color:#f1f1f1;
+    
+  
+  }
+  
+  /* .flex-child {
+    flex:1;
+    border: 2px solid yellow;
+  
+    background-color: peru;
+  
+  }   */
+  
+  
+  /* .flex-child:first-child {
+    margin-right: 20px;
+  }  */
+  .cart--image {
+    display:flex;
+    /* background-color: red; */
+    /* padding: 10px; */
+  }
+  
+  .cart--image img {
+    height: 130px;
+    width: 130px;
+  
+    margin:10px;
+  
+  } 
+  
+  .cart--title{
+    /* margin: 10px;
+    padding:10px; */
+    /* background-color: darkblue; */
+    width:300px
+  }
+  
+  
+  
+  .left-child{
+    /* background-color: purple; */
+    width:60%;
+    margin:20px;
+    padding: 90px;
+  }
+  .price{
+    /* background: chartreuse; */
+    width:90px;
+  }
+  
+   
+  
+  
 }
-
-/* .flex-child {
-  flex:1;
-  border: 2px solid yellow;
-
-  background-color: peru;
-
-}   */
-
-
-/* .flex-child:first-child {
-  margin-right: 20px;
-}  */
-.cart--image {
-  display:flex;
-  /* background-color: red; */
-  /* padding: 10px; */
-}
-
-.cart--image img {
-  height: 130px;
-  width: 130px;
-
-  margin:10px;
-
-} 
-
-.cart--title{
-  /* margin: 10px;
-  padding:10px; */
-  /* background-color: darkblue; */
-  width:300px
-}
-
-
-
-.left-child{
-  /* background-color: purple; */
-  width:60%;
-  margin:20px;
-  padding: 90px;
-}
-.price{
-  /* background: chartreuse; */
-  width:90px;
-}
-
- 
-

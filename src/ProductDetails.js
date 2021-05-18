@@ -22,15 +22,16 @@ let productDetails = value.getProduct(id);
 
     </div>
     <div  className="Product-details-page">
-    <div className="product-image img">
-      { <img src={productDetails.image} alt=""/> }
+    <div className="product-image">
+      <img className="product-image-img" src={productDetails.image} alt=""/>
       </div>
       <div className="product--info">
        <h3>{productDetails.title}</h3>
       <p>Product details: {productDetails.description}</p>
       <h3>Price: {productDetails.price} kr.</h3>
+      <div className="Product-details-button-div">
       <button className="Product-details-button" value={id} onClick={(e)=>value.onAdd(e.target.value)}>Add to cart</button>
-      {/* <Button value={id} onClick={(e)=>value.onAdd(e.target.value)}>Add to cart</Button> */}
+      </div>
       </div>
       </div>
       <div className="backtohome">

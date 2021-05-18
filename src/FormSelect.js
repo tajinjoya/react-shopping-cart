@@ -87,7 +87,7 @@ function FormSelect(props) {
    </button>
       </div>
       <div className="cart-total">
-        <p className="cart-total-text">{proQty}pcs: {(proQty  * props.price).toFixed(2)} kr.</p>
+        <p className="cart-total-text">{proQty}pcs: <strong> {(proQty  * props.price).toFixed(2)} kr.</strong></p>
       </div>
       </div>
   
